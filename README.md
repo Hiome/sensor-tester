@@ -2,7 +2,7 @@
 
 ## Installation
 
-Make sure you are using Python 2.7. Install the dependencies:
+Make sure you are using Python 2.7 and pip is installed. Install the dependencies:
 
     pip install -r requirements.txt
 

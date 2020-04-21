@@ -3,6 +3,7 @@
 import serial
 import subprocess
 
+# port will look like "COM3" on windows
 SERIAL_PORT = '/dev/cu.usbserial-AL05VI82'
 
 def check_sensor(nodeId):
@@ -39,7 +40,7 @@ def check_sensor(nodeId):
 def update_ota():
   try:
     log("Flashing firmware...")
-    subprocess.check_call('./OTA.py -s ' + SERIAL_PORT + ' -b 19200 -f 13.hex -t 13', shell=True)
+    subprocess.check_call('python OTA.py -s ' + SERIAL_PORT + ' -b 19200 -f 13.hex -t 13', shell=True)
     log("Sensor updated! Waiting for it to boot up...")
   except:
     log("FAIL: could not wirelessly update sensor", "fail")
